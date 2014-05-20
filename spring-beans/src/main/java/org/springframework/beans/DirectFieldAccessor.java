@@ -56,7 +56,8 @@ public class DirectFieldAccessor extends AbstractPropertyAccessor {
 	 * Create a new DirectFieldAccessor for the given target object.
 	 * @param target the target object to access
 	 */
-	public DirectFieldAccessor(Object target) {
+	public DirectFieldAccessor(final Object target) {
+		Assert.notNull(target, "Target object must not be null");
 		this.target = target;
 
 		this.typeConverterDelegate = new TypeConverterDelegate(this, target);
