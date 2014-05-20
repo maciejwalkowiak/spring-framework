@@ -66,17 +66,17 @@ public class DirectFieldAccessor extends AbstractPropertyAccessor {
 	}
 
 	@Override
-	public boolean isReadableProperty(String propertyName) {
+	public boolean isReadableProperty(String propertyName) throws BeansException {
 		return doesPropertyExists(propertyName);
 	}
 
 	@Override
-	public boolean isWritableProperty(String propertyName) {
+	public boolean isWritableProperty(String propertyName) throws BeansException {
 		return doesPropertyExists(propertyName);
 	}
 
 	@Override
-	public Class<?> getPropertyType(String propertyPath) {
+	public Class<?> getPropertyType(String propertyPath) throws BeansException {
 		FieldHolder fieldHolder = getFieldHolder(propertyPath);
 		if (fieldHolder != null) {
 			return fieldHolder.getField().getType();
