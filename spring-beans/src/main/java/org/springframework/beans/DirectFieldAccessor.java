@@ -192,7 +192,7 @@ public class DirectFieldAccessor extends AbstractPropertyAccessor {
 			if (newTarget == null) {
 				// nested object not created, creating new instance using default constructor
 				ObjenesisStd objenesis = new ObjenesisStd();
-				ObjectInstantiator instantiator = objenesis.getInstantiatorOf(field.getType());
+				ObjectInstantiator<?> instantiator = objenesis.getInstantiatorOf(field.getType());
 
 				newTarget = instantiator.newInstance();
 				ReflectionUtils.setField(field, target, newTarget);
